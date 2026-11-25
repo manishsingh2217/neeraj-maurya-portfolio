@@ -6591,6 +6591,39 @@
       "timestamp": "2026-11-25T11:43:56.487Z",
       "createdAt": "2026-11-25T11:43:56.493Z",
       "updatedAt": "2026-11-25T11:43:56.493Z"
+    },
+    {
+      "_id": "edda6ee6-ee12-4c99-9521-1436822bfbb6",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.1",
+      "page": "/",
+      "referer": "http://localhost:5000/",
+      "dateString": "2026-11-25",
+      "timestamp": "2026-11-25T12:05:33.726Z",
+      "createdAt": "2026-11-25T12:05:33.735Z",
+      "updatedAt": "2026-11-25T12:05:33.735Z"
+    },
+    {
+      "_id": "093e432c-cc1c-42fe-bd83-8ec070853f15",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.1",
+      "page": "/",
+      "referer": "http://localhost:5000/",
+      "dateString": "2026-11-25",
+      "timestamp": "2026-11-25T12:05:59.545Z",
+      "createdAt": "2026-11-25T12:05:59.549Z",
+      "updatedAt": "2026-11-25T12:05:59.549Z"
+    },
+    {
+      "_id": "c7ca80c6-46d6-4c44-9c9a-5086bba6d0db",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.0.0 Safari/537.36",
+      "page": "/",
+      "referer": "http://localhost:5000/",
+      "dateString": "2026-11-25",
+      "timestamp": "2026-11-25T12:06:54.451Z",
+      "createdAt": "2026-11-25T12:06:54.457Z",
+      "updatedAt": "2026-11-25T12:06:54.457Z"
     }
   ],
   "activityLogs": [

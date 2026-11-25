@@ -54,7 +54,7 @@ export const StickyProfileCard = () => {
   const activeSocials = socialLinks && socialLinks.length > 0 ? socialLinks : defaultSocials;
 
   return (
-    <aside className="w-full lg:w-80 xl:w-[22rem] shrink-0 self-start lg:sticky lg:top-24 z-20 transition-all duration-300 flex justify-center lg:block">
+    <aside className="w-full lg:w-80 xl:w-[22rem] shrink-0 self-start lg:sticky lg:top-24 z-20 flex justify-center lg:block">
       <div className="w-full max-w-sm sm:max-w-md lg:max-w-none bg-card rounded-3xl p-4 sm:p-6 shadow-2xl flex flex-col items-center text-center relative overflow-hidden group">
         {/* Subtle Ambient Card Glow */}
         <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
