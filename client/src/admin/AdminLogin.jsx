@@ -88,7 +88,7 @@ export const AdminLogin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full bg-[#171717] border border-[#333] focus:border-[#fb8236] focus:ring-0 focus:outline-none rounded-xl px-4 py-3 pl-10 text-sm text-foreground outline-none transition-colors"
-                placeholder="nm9025127@gmail.com"
+                placeholder="Enter email"
               />
               <Mail className="w-4 h-4 text-muted-foreground absolute left-3.5 top-3.5" />
             </div>

@@ -33,17 +33,17 @@ async function seedDatabase(force = false) {
 
     // 1. Super Admin
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'Admin@12345', salt);
+    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || 'Neeraj@2005?', salt);
     await models.Admin.create({
       name: process.env.ADMIN_NAME || 'Neeraj Maurya (Super Admin)',
-      email: (process.env.ADMIN_EMAIL || 'admin@neerajmaurya.com').toLowerCase(),
+      email: (process.env.ADMIN_EMAIL || 'nm9025127@gmail.com').toLowerCase(),
       password: hashedPassword,
       role: 'superadmin',
       status: 'active',
       avatar: '/uploads/images/avatar.png',
       lastLogin: new Date()
     });
-    console.log(' - Admin created: admin@neerajmaurya.com / Admin@12345');
+    console.log(' - Admin created: nm9025127@gmail.com / Neeraj@2005?');
 
     // 2. Profile
     await models.Profile.create({

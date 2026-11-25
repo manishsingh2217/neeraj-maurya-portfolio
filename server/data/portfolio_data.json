@@ -8,9 +8,9 @@
       "role": "superadmin",
       "status": "active",
       "avatar": "/uploads/images/avatar.png",
-      "lastLogin": "2026-11-23T06:46:25.419Z",
+      "lastLogin": "2026-11-25T16:51:04.227Z",
       "createdAt": "2026-11-22T09:29:11.358Z",
-      "updatedAt": "2026-11-23T06:46:25.423Z"
+      "updatedAt": "2026-11-25T16:51:04.231Z"
     },
     {
       "_id": "admin-neeraj-maurya",
@@ -8134,6 +8134,32 @@
       "timestamp": "2026-11-23T06:46:25.430Z",
       "createdAt": "2026-11-23T06:46:25.454Z",
       "updatedAt": "2026-11-23T06:46:25.454Z"
+    },
+    {
+      "_id": "fd9ac812-c773-4c78-a01c-8ed550572070",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-25T16:50:23.111Z",
+      "createdAt": "2026-11-25T16:50:23.127Z",
+      "updatedAt": "2026-11-25T16:50:23.127Z"
+    },
+    {
+      "_id": "36c3b04c-abc1-4a46-882e-15a5ccff3ef9",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-25T16:51:04.237Z",
+      "createdAt": "2026-11-25T16:51:04.260Z",
+      "updatedAt": "2026-11-25T16:51:04.260Z"
     }
   ],
   "appearance": [
