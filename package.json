@@ -1,0 +1,15 @@
+{
+  "name": "neeraj-maurya-portfolio",
+  "version": "1.0.0",
+  "description": "Full-Stack Dynamic Portfolio and Admin CMS for Neeraj Maurya",
+  "main": "server/index.js",
+  "scripts": {
+    "build": "npm --prefix client install && npm --prefix client run build && npm --prefix server install",
+    "start": "node server/index.js",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client run dev"
+  },
+  "keywords": ["portfolio", "react", "express", "nodejs", "tailwind", "cms"],
+  "author": "Neeraj Maurya",
+  "license": "MIT"
+}
