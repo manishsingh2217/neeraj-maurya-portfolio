@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
 import { defaultProjects } from '../data/defaultPortfolioData';
-import { ExternalLink, Github, ArrowUpRight, CheckCircle2, ChevronDown } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const ProjectsSection = () => {
   const { projects } = usePortfolio();
@@ -10,10 +10,11 @@ export const ProjectsSection = () => {
 
   const defaultThumbnails = [
     'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80', // Financial Dashboard / Charts
-    'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=800&q=80', // E-Commerce Analytics
+    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80', // E-Commerce Analytics
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80', // MIS Reporting & Spreadsheets
     'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80', // Retail Forecasting / Machine Learning
-    'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80'
+    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80', // Churn Analytics
+    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'  // Risk Tracker
   ];
 
   const publishedProjects = effectiveProjects.filter((p) => p.isPublished !== false);
@@ -156,16 +157,30 @@ export const ProjectsSection = () => {
         })}
       </div>
 
-      {/* Load More Projects Button (shown only when total projects > 4) */}
-      {hasMore && (
-        <div className="text-center mt-10">
-          <button
-            onClick={() => setVisibleCount((prev) => prev + 4)}
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-card hover:bg-muted text-foreground text-xs font-bold tracking-wider uppercase transition-all duration-200 shadow-md cursor-pointer"
-          >
-            <span>Load More Projects</span>
-            <ChevronDown className="w-4 h-4 text-primary" />
-          </button>
+      {/* Load More Projects Button (only 4 shown initially; Load More reveals 5th & more) */}
+      {publishedProjects.length > 4 && (
+        <div className="text-center mt-8 sm:mt-10">
+          {hasMore ? (
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 4)}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-card hover:bg-muted border border-border/70 hover:border-primary/50 text-foreground hover:text-primary text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-lg hover:shadow-primary/10 cursor-pointer group"
+            >
+              <span>Load More Projects ({publishedProjects.length - visibleCount} More)</span>
+              <ChevronDown className="w-4 h-4 text-primary transition-transform group-hover:translate-y-0.5" />
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setVisibleCount(4);
+                const el = document.getElementById('projects');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-card hover:bg-muted border border-border/50 text-muted-foreground hover:text-foreground text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer"
+            >
+              <span>Show Less</span>
+              <ChevronUp className="w-4 h-4 text-primary" />
+            </button>
+          )}
         </div>
       )}
     </section>

@@ -439,6 +439,58 @@
   ],
   "projects": [
     {
+      "_id": "proj-1",
+      "title": "Bank Loan Analysis Dashboard",
+      "slug": "bank-loan-analysis-dashboard",
+      "category": "Business Intelligence & MIS",
+      "description": "Developed an interactive business intelligence dashboard to analyse bank loan data, monitor loan performance, and identify trends in loan approvals and defaults.",
+      "features": [
+        "Loan data preparation & schema normalization",
+        "Executive KPI development (Total Funded Amount, Received Amount, Avg DTI)",
+        "Interactive Power BI dashboard with dynamic cross-filtering and drill-through"
+      ],
+      "technologies": [
+        "Microsoft Excel",
+        "Power BI",
+        "DAX",
+        "Data Modeling",
+        "Financial Analysis"
+      ],
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      "githubUrl": "https://github.com/erneerajmaurya/bank-loan-analysis-dashboard",
+      "liveUrl": "https://app.powerbi.com/view?r=sample-loan-dashboard",
+      "isFeatured": true,
+      "isPublished": true,
+      "order": 1
+    },
+    {
+      "_id": "proj-2",
+      "title": "E-Commerce Sales Analysis",
+      "slug": "e-commerce-sales-analysis",
+      "category": "Data Science & Analytics",
+      "description": "Analysed e-commerce sales data to understand sales performance, customer purchasing patterns, and actionable business insights using Python and statistical modeling.",
+      "features": [
+        "Automated data importing from multi-source CSVs",
+        "RFM customer segmentation & regional demand analysis",
+        "High-impact data visualisations using Matplotlib, Seaborn, and Plotly"
+      ],
+      "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Plotly",
+        "Jupyter Notebook"
+      ],
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
+      "githubUrl": "https://github.com/erneerajmaurya/e-commerce-sales-analysis",
+      "liveUrl": "https://github.com/erneerajmaurya/e-commerce-sales-analysis#readme",
+      "isFeatured": true,
+      "isPublished": true,
+      "order": 2
+    },
+    {
       "_id": "ca6d697f-7dde-4d8b-a074-8b11a6e55762",
       "title": "MIS Cross-Departmental Reporting Automation",
       "slug": "mis-reporting-automation",
@@ -18633,6 +18685,39 @@
       "timestamp": "2026-11-26T04:47:40.281Z",
       "createdAt": "2026-11-26T04:47:40.298Z",
       "updatedAt": "2026-11-26T04:47:40.298Z"
+    },
+    {
+      "_id": "002989dc-10b4-4b44-84a0-d6f4df70970c",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.19041.7844",
+      "page": "/",
+      "referer": "",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T04:55:01.572Z",
+      "createdAt": "2026-11-26T04:55:01.618Z",
+      "updatedAt": "2026-11-26T04:55:01.618Z"
+    },
+    {
+      "_id": "fb95a936-51de-4756-a85b-d76ac1e08bfc",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.19041.7844",
+      "page": "/",
+      "referer": "",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T04:55:23.640Z",
+      "createdAt": "2026-11-26T04:55:23.657Z",
+      "updatedAt": "2026-11-26T04:55:23.657Z"
+    },
+    {
+      "_id": "03db06d1-4488-4243-accf-e1a26d677c74",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T04:55:36.848Z",
+      "createdAt": "2026-11-26T04:55:36.865Z",
+      "updatedAt": "2026-11-26T04:55:36.865Z"
     }
   ],
   "activityLogs": [

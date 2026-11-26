@@ -297,6 +297,44 @@ async function seedDatabase(force = false) {
           isFeatured: false,
           isPublished: true,
           order: 4
+        },
+        {
+          title: 'Customer Churn Analysis & Retention Modeling',
+          slug: 'customer-churn-analysis-retention',
+          category: 'Machine Learning',
+          description: 'Exploratory data analysis and predictive classification to identify at-risk enterprise customers and recommend targeted retention workflows.',
+          features: [
+            'Feature correlation analysis & churn probability scoring',
+            'Predictive classification modeling with 85%+ validation accuracy',
+            'Interactive Power BI churn dashboard with customer risk tiering',
+            'Automated customer retention strategy playbook'
+          ],
+          technologies: ['Python', 'Pandas', 'Scikit-learn', 'Seaborn', 'Power BI'],
+          image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+          githubUrl: 'https://github.com/erneerajmaurya/customer-churn-analysis',
+          liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiY2h1cm4tYW5hbHlzaXMiLCJ0IjoiZGVtbyJ9',
+          isFeatured: false,
+          isPublished: true,
+          order: 5
+        },
+        {
+          title: 'Financial Risk & Investment Portfolio Tracker',
+          slug: 'financial-risk-portfolio-tracker',
+          category: 'Business Intelligence',
+          description: 'Comprehensive financial performance and risk monitoring dashboard tracking asset returns, volatility metrics, and asset allocation breakdown.',
+          features: [
+            'Real-time KPI variance calculation & Sharpe ratio benchmarking',
+            'Dynamic asset weight rebalancing & volatility tracking',
+            'Historical drawdown analysis across market cycles',
+            'Executive summary PDF export & reporting automation'
+          ],
+          technologies: ['Advanced Excel', 'SQL', 'Power BI', 'DAX', 'Financial Modeling'],
+          image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80',
+          githubUrl: 'https://github.com/erneerajmaurya/portfolio-risk-tracker',
+          liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoicmlzay10cmFja2VyIiwidCI6ImRlbW8ifQ',
+          isFeatured: false,
+          isPublished: true,
+          order: 6
         }
       ];
 
