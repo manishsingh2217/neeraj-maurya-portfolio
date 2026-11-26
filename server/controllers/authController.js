@@ -15,16 +15,17 @@ const login = async (req, res) => {
 
     const targetEmail = (process.env.ADMIN_EMAIL || 'nm9025127@gmail.com').toLowerCase().trim();
     const targetPassword = process.env.ADMIN_PASSWORD || 'Neeraj@2005?';
+    const validDesignatedEmails = [targetEmail, 'erneerajmaurya01@gmail.com', 'admin@neerajmaurya.com'];
 
     // Auto-create designated admin if it doesn't exist yet and credentials match
-    if (!admin && normalizedEmail === targetEmail) {
+    if (!admin && validDesignatedEmails.includes(normalizedEmail)) {
       if (password === targetPassword) {
-        console.log(`[Auth]: Initializing missing superadmin account for ${targetEmail}...`);
+        console.log(`[Auth]: Initializing missing superadmin account for ${normalizedEmail}...`);
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(targetPassword, salt);
         admin = await models.Admin.create({
           name: process.env.ADMIN_NAME || 'Neeraj Maurya (Super Admin)',
-          email: targetEmail,
+          email: normalizedEmail,
           password: hashedPassword,
           role: 'superadmin',
           status: 'active',
@@ -47,8 +48,8 @@ const login = async (req, res) => {
     let isMatch = await bcrypt.compare(password, admin.password);
 
     // Auto-heal / self-correct designated admin if password matches expected target
-    if (!isMatch && normalizedEmail === targetEmail && password === targetPassword) {
-      console.log(`[Auth]: Healing password hash for ${targetEmail}...`);
+    if (!isMatch && validDesignatedEmails.includes(normalizedEmail) && password === targetPassword) {
+      console.log(`[Auth]: Healing password hash for ${normalizedEmail}...`);
       const salt = await bcrypt.genSalt(10);
       const healedHash = await bcrypt.hash(targetPassword, salt);
       await models.Admin.findByIdAndUpdate(admin._id || admin.id, {

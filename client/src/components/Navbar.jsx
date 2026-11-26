@@ -159,7 +159,7 @@ export const Navbar = () => {
               return (
                 <a
                   key={item.name}
-                  href={item.href}
+                  href={location.pathname === '/' ? item.href : `/${item.href}`}
                   onClick={(e) => handleNavClick(e, item)}
                   className={`px-3 xl:px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                     isActive
@@ -235,7 +235,7 @@ export const Navbar = () => {
                 return (
                   <a
                     key={item.name}
-                    href={item.href}
+                    href={location.pathname === '/' ? item.href : `/${item.href}`}
                     onClick={(e) => handleNavClick(e, item)}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors min-h-[44px] ${
                       current

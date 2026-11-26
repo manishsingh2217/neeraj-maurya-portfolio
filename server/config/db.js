@@ -5,19 +5,27 @@ const path = require('path');
 let isConnected = false;
 let useLocalStore = false;
 
-// Ensure data and upload directories exist
+// Ensure data and upload directories exist (safely handled in serverless/read-only environments)
 const dataDir = path.join(__dirname, '..', 'data');
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+try {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+} catch (e) {
+  // Read-only filesystem fallback
 }
 
 const uploadsDir = path.join(__dirname, '..', 'uploads');
-['resumes', 'images', 'certificates', 'thumbnails'].forEach(sub => {
-  const p = path.join(uploadsDir, sub);
-  if (!fs.existsSync(p)) {
-    fs.mkdirSync(p, { recursive: true });
-  }
-});
+try {
+  ['resumes', 'images', 'certificates', 'thumbnails'].forEach(sub => {
+    const p = path.join(uploadsDir, sub);
+    if (!fs.existsSync(p)) {
+      fs.mkdirSync(p, { recursive: true });
+    }
+  });
+} catch (e) {
+  // Read-only filesystem fallback
+}
 
 const connectDB = async () => {
   const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/neeraj_portfolio';

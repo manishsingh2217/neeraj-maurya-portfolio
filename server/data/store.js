@@ -25,30 +25,46 @@ const getInitialState = () => ({
 
 class StoreManager {
   constructor() {
+    this.memoryCache = null;
     this.init();
   }
 
   init() {
-    if (!fs.existsSync(DATA_FILE)) {
-      fs.writeFileSync(DATA_FILE, JSON.stringify(getInitialState(), null, 2), 'utf-8');
+    try {
+      if (!fs.existsSync(DATA_FILE)) {
+        fs.writeFileSync(DATA_FILE, JSON.stringify(getInitialState(), null, 2), 'utf-8');
+      }
+    } catch (e) {
+      // In serverless / read-only filesystem (e.g. Vercel)
     }
   }
 
   read() {
+    if (this.memoryCache) {
+      return this.memoryCache;
+    }
     try {
-      const data = fs.readFileSync(DATA_FILE, 'utf-8');
-      return JSON.parse(data);
+      if (fs.existsSync(DATA_FILE)) {
+        const data = fs.readFileSync(DATA_FILE, 'utf-8');
+        this.memoryCache = JSON.parse(data);
+        return this.memoryCache;
+      }
     } catch (err) {
       console.error('Error reading JSON store:', err.message);
-      return getInitialState();
     }
+    if (!this.memoryCache) {
+      this.memoryCache = getInitialState();
+    }
+    return this.memoryCache;
   }
 
   write(data) {
+    this.memoryCache = data;
     try {
       fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
     } catch (err) {
-      console.error('Error writing JSON store:', err.message);
+      // Disk write may fail on serverless read-only filesystem; memory cache preserves updates
+      console.warn('[StoreManager]: Kept updates in memory cache (read-only filesystem):', err.message);
     }
   }
 

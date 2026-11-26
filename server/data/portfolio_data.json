@@ -8,9 +8,9 @@
       "role": "superadmin",
       "status": "active",
       "avatar": "/uploads/images/avatar.png",
-      "lastLogin": "2026-11-26T02:22:05.436Z",
+      "lastLogin": "2026-11-26T05:29:22.379Z",
       "createdAt": "2026-11-22T09:29:11.358Z",
-      "updatedAt": "2026-11-26T02:22:05.440Z"
+      "updatedAt": "2026-11-26T05:29:22.380Z"
     },
     {
       "_id": "admin-neeraj-maurya",
@@ -813,6 +813,28 @@
       "replyNotes": "Replied with resume download link on LinkedIn.",
       "createdAt": "2026-11-25T04:46:30.599Z",
       "updatedAt": "2026-11-26T04:46:30.641Z"
+    },
+    {
+      "_id": "673fb148-56c6-461c-90a2-de5994d4e7e3",
+      "name": "Test Visitor",
+      "email": "visitor@example.com",
+      "subject": "Inquiry regarding MIS project",
+      "message": "Hello Neeraj, this is an automated functionality test message.",
+      "isRead": true,
+      "senderIp": "::1",
+      "createdAt": "2026-11-26T05:20:46.104Z",
+      "updatedAt": "2026-11-26T05:24:13.966Z"
+    },
+    {
+      "_id": "d5c9e87f-d712-4e7d-bf65-295e51a8788e",
+      "name": "QA Verifier",
+      "email": "qatest@example.com",
+      "subject": "E2E Verification Inquiry",
+      "message": "Testing full end-to-end contact message pipeline.",
+      "isRead": true,
+      "senderIp": "::1",
+      "createdAt": "2026-11-26T05:27:38.725Z",
+      "updatedAt": "2026-11-26T05:29:43.968Z"
     }
   ],
   "socialLinks": [
@@ -18718,6 +18740,94 @@
       "timestamp": "2026-11-26T04:55:36.848Z",
       "createdAt": "2026-11-26T04:55:36.865Z",
       "updatedAt": "2026-11-26T04:55:36.865Z"
+    },
+    {
+      "_id": "12441d3b-8e08-4022-874e-89d8d3c9a2f9",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/admin/login",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:20:20.728Z",
+      "createdAt": "2026-11-26T05:20:20.745Z",
+      "updatedAt": "2026-11-26T05:20:20.745Z"
+    },
+    {
+      "_id": "aad00001-da59-4e60-8269-f9840110446e",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/admin/dashboard",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:21:10.549Z",
+      "createdAt": "2026-11-26T05:21:10.562Z",
+      "updatedAt": "2026-11-26T05:21:10.562Z"
+    },
+    {
+      "_id": "369c372c-8b8f-4238-bea9-ba51321124c0",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/admin/dashboard",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:21:21.473Z",
+      "createdAt": "2026-11-26T05:21:21.488Z",
+      "updatedAt": "2026-11-26T05:21:21.488Z"
+    },
+    {
+      "_id": "cc726a6b-91ed-4e80-899a-3c29ff41e9db",
+      "ip": "::1",
+      "userAgent": "Unknown",
+      "page": "/",
+      "referer": "",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:23:57.354Z",
+      "createdAt": "2026-11-26T05:23:57.395Z",
+      "updatedAt": "2026-11-26T05:23:57.395Z"
+    },
+    {
+      "_id": "4c5dec75-0d39-4271-a69d-a8e2443c2191",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:27:22.308Z",
+      "createdAt": "2026-11-26T05:27:22.309Z",
+      "updatedAt": "2026-11-26T05:27:22.309Z"
+    },
+    {
+      "_id": "eb8f4555-10cd-4562-95d0-85866628489a",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/resources",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:28:51.985Z",
+      "createdAt": "2026-11-26T05:28:51.985Z",
+      "updatedAt": "2026-11-26T05:28:51.985Z"
+    },
+    {
+      "_id": "93dcf157-f2b5-47c4-9a49-dbdcbb602032",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/admin/login",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:29:13.232Z",
+      "createdAt": "2026-11-26T05:29:13.232Z",
+      "updatedAt": "2026-11-26T05:29:13.232Z"
+    },
+    {
+      "_id": "3004a017-4de7-4aa3-8c0e-d1df8060769d",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.7977.167 Safari/537.36 Antigravity/2.35.2",
+      "page": "/",
+      "referer": "http://localhost:5000/admin/dashboard",
+      "dateString": "2026-11-26",
+      "timestamp": "2026-11-26T05:30:15.708Z",
+      "createdAt": "2026-11-26T05:30:15.708Z",
+      "updatedAt": "2026-11-26T05:30:15.708Z"
     }
   ],
   "activityLogs": [
@@ -20332,6 +20442,136 @@
       "timestamp": "2026-11-26T04:46:30.646Z",
       "createdAt": "2026-11-26T04:46:30.692Z",
       "updatedAt": "2026-11-26T04:46:30.692Z"
+    },
+    {
+      "_id": "bb5731cf-c27b-4fa1-bb54-b167e1c23938",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:18:44.032Z",
+      "createdAt": "2026-11-26T05:18:44.070Z",
+      "updatedAt": "2026-11-26T05:18:44.070Z"
+    },
+    {
+      "_id": "80cb340b-ee53-40e0-8268-f7c64d99de2b",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:19:48.603Z",
+      "createdAt": "2026-11-26T05:19:48.647Z",
+      "updatedAt": "2026-11-26T05:19:48.647Z"
+    },
+    {
+      "_id": "0eb89895-5feb-43f8-a552-89701e9075fa",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:20:43.970Z",
+      "createdAt": "2026-11-26T05:20:44.013Z",
+      "updatedAt": "2026-11-26T05:20:44.013Z"
+    },
+    {
+      "_id": "fddc3bb9-f87e-490e-98dd-4709dd6b9841",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:23:57.291Z",
+      "createdAt": "2026-11-26T05:23:57.338Z",
+      "updatedAt": "2026-11-26T05:23:57.338Z"
+    },
+    {
+      "_id": "3d8cc612-23d8-4233-aae4-58f23e08546d",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "BACKUP",
+      "module": "System",
+      "description": "Generated and exported complete JSON database backup.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:23:58.167Z",
+      "createdAt": "2026-11-26T05:23:58.183Z",
+      "updatedAt": "2026-11-26T05:23:58.183Z"
+    },
+    {
+      "_id": "6c09b769-ae83-4a1c-86a0-3ad9f2aa3f3d",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:24:13.409Z",
+      "createdAt": "2026-11-26T05:24:13.459Z",
+      "updatedAt": "2026-11-26T05:24:13.459Z"
+    },
+    {
+      "_id": "a7695477-941d-436f-a1c3-47bfbdf5bbd7",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "CREATE",
+      "module": "Skills",
+      "description": "Added new skill: Automated Test Skill",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:24:13.545Z",
+      "createdAt": "2026-11-26T05:24:13.590Z",
+      "updatedAt": "2026-11-26T05:24:13.590Z"
+    },
+    {
+      "_id": "4bf5809b-805c-43cb-8ad9-ba649fc71fe4",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "UPDATE",
+      "module": "Skills",
+      "description": "Updated skill: Automated Test Skill",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:24:13.666Z",
+      "createdAt": "2026-11-26T05:24:13.713Z",
+      "updatedAt": "2026-11-26T05:24:13.713Z"
+    },
+    {
+      "_id": "f10e1acd-5cef-4577-8a4b-da174fe5cbfa",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "DELETE",
+      "module": "Skills",
+      "description": "Deleted skill: Automated Test Skill",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:24:13.842Z",
+      "createdAt": "2026-11-26T05:24:13.885Z",
+      "updatedAt": "2026-11-26T05:24:13.885Z"
+    },
+    {
+      "_id": "1bb673f8-ebd8-45aa-b806-4689d559f943",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T05:29:22.392Z",
+      "createdAt": "2026-11-26T05:29:22.392Z",
+      "updatedAt": "2026-11-26T05:29:22.392Z"
     }
   ],
   "appearance": [

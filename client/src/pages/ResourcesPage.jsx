@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { api } from '../services/api';
-import { Download, FileText, Database, Code, FolderGit2, BookOpen, ExternalLink, Search, Loader2, Layers } from 'lucide-react';
+import { Download, FileText, Database, Code, FolderGit2, BookOpen, ExternalLink, Search, Loader2, Layers, ArrowLeft } from 'lucide-react';
 
 export const ResourcesPage = () => {
   const [activeTab, setActiveTab] = useState('materials');
@@ -58,18 +59,29 @@ export const ResourcesPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#171717] text-[#fafafa] relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden transition-colors duration-200">
       <div className="ambient-glow" />
       <Navbar />
 
       <div className="max-w-5xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-20">
+        {/* Return to Portfolio Link */}
+        <div className="mb-6">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors group"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
+            <span>Return to Portfolio</span>
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#fb8236]/30 bg-[#fb8236]/10 text-[#fb8236] mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-primary/30 bg-primary/10 text-primary mb-3">
             <span>DOWNLOADS & ASSETS</span>
           </div>
           <h1 className="font-heading text-2xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-            Resources & <span className="text-[#fb8236]">Materials.</span>
+            Resources & <span className="text-primary">Materials.</span>
           </h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-2">
             Browse and download study materials, SQL references, and project artifacts.
@@ -83,19 +95,19 @@ export const ResourcesPage = () => {
               placeholder="Search by topic, keyword, or file type..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#242424] border border-[#383838] rounded-full pl-10 pr-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#fb8236] shadow-sm"
+              className="w-full bg-card border border-border rounded-full pl-10 pr-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary shadow-sm"
             />
           </div>
         </div>
 
         {/* Tab Switcher */}
         <div className="flex items-center justify-center mb-8 px-1">
-          <div className="w-full max-w-md bg-[#242424] border border-[#383838] p-1 rounded-full flex items-center justify-between">
+          <div className="w-full max-w-md bg-card border border-border p-1 rounded-full flex items-center justify-between">
             <button
               onClick={() => setActiveTab('materials')}
               className={`flex-1 text-center px-2.5 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'materials'
-                  ? 'bg-[#fb8236] text-black shadow-md font-bold'
+                  ? 'bg-primary text-primary-foreground shadow-md font-bold'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -105,7 +117,7 @@ export const ResourcesPage = () => {
               onClick={() => setActiveTab('projects')}
               className={`flex-1 text-center px-2.5 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'projects'
-                  ? 'bg-[#fb8236] text-black shadow-md font-bold'
+                  ? 'bg-primary text-primary-foreground shadow-md font-bold'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
@@ -121,7 +133,7 @@ export const ResourcesPage = () => {
             <p className="text-xs font-mono">Loading downloadable assets...</p>
           </div>
         ) : displayedList.length === 0 ? (
-          <div className="bg-[#242424] border border-[#383838] rounded-2xl p-8 sm:p-12 text-center max-w-md mx-auto">
+          <div className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center max-w-md mx-auto">
             <div className="w-12 h-12 rounded-2xl bg-muted/30 text-muted-foreground flex items-center justify-center mx-auto mb-3">
               <Layers className="w-6 h-6" />
             </div>
@@ -137,27 +149,27 @@ export const ResourcesPage = () => {
             {displayedList.map((item, idx) => (
               <div
                 key={item._id || item.id || idx}
-                className="bg-[#242424] border border-[#383838]/60 hover:border-[#fb8236]/50 rounded-2xl p-4 sm:p-6 shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                className="bg-card border border-border hover:border-primary/50 rounded-2xl p-4 sm:p-6 shadow-sm transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-start justify-between gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#1c1c1c] border border-[#383838] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center shrink-0">
                       {getFormatIcon(item.format, item.category)}
                     </div>
                     <div className="flex items-center gap-1.5 font-mono text-[11px]">
-                      <span className="px-2 py-0.5 rounded-md bg-[#1a1a1a] border border-[#383838] text-muted-foreground">
+                      <span className="px-2 py-0.5 rounded-md bg-muted border border-border text-muted-foreground">
                         {item.format}
                       </span>
-                      <span className="px-2 py-0.5 rounded-md bg-[#fb8236]/10 text-[#fb8236] border border-[#fb8236]/30 font-semibold">
+                      <span className="px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/30 font-semibold">
                         {item.size}
                       </span>
                     </div>
                   </div>
 
-                  <div className="text-[11px] font-mono text-[#f8af26] uppercase mt-3">
+                  <div className="text-[11px] font-mono text-primary uppercase mt-3">
                     {item.category}
                   </div>
-                  <h3 className="font-heading font-bold text-base text-foreground mt-0.5 group-hover:text-[#fb8236] transition-colors">
+                  <h3 className="font-heading font-bold text-base text-foreground mt-0.5 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
                   {item.description && (
@@ -167,13 +179,13 @@ export const ResourcesPage = () => {
                   )}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#383838]/40">
+                <div className="mt-6 pt-4 border-t border-border/50">
                   {item.isExternal ? (
                     <a
                       href={item.downloadUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#1c1c1c] hover:bg-[#282828] border border-[#383838] text-xs font-semibold text-foreground transition-colors"
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-card hover:bg-muted border border-border text-xs font-semibold text-foreground transition-colors"
                     >
                       <span>View Repository</span>
                       <ExternalLink className="w-3.5 h-3.5" />
