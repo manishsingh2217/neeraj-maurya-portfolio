@@ -53,11 +53,6 @@ A full-stack, responsive, and dynamic portfolio website recreated with an integr
 
 ---
 
-## 🔑 Default Administrator Credentials
-
-| Role | Email | Password | Access Level |
-| :--- | :--- | :--- | :--- |
-| **Super Admin** | `nm9025127@gmail.com` | `Neeraj@2005?` | Full Dashboard & User Management |
 
 Admin Login URL: `http://localhost:5000/admin/login` (or navigate via lock icon in the navbar)
 
