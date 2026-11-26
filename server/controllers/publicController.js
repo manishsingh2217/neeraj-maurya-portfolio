@@ -19,6 +19,13 @@ const createTransporter = () => {
   return null;
 };
 
+let fallbackData = {};
+try {
+  fallbackData = require('../data/portfolio_data.json');
+} catch (e) {
+  // fallback if file not found
+}
+
 const getPortfolioData = async (req, res) => {
   try {
     // Record visitor analytics asynchronously
@@ -62,13 +69,13 @@ const getPortfolioData = async (req, res) => {
     ] = await Promise.all([
       models.Profile.findOne(),
       models.About.findOne(),
-      models.Skill.find({ isEnabled: true }, { order: 1 }),
+      models.Skill.find({ isEnabled: { $ne: false } }, { order: 1 }),
       models.Experience.find({}, { order: 1 }),
-      models.Project.find({ isPublished: true }, { order: 1 }),
+      models.Project.find({ isPublished: { $ne: false } }, { order: 1 }),
       models.Education.find({}, { order: 1 }),
-      models.Certification.find({ isEnabled: true }, { order: 1 }),
-      models.Resource.find({ isEnabled: true }, { order: 1 }),
-      models.SocialLink.find({ isEnabled: true }, { order: 1 }),
+      models.Certification.find({ isEnabled: { $ne: false } }, { order: 1 }),
+      models.Resource.find({ isEnabled: { $ne: false } }, { order: 1 }),
+      models.SocialLink.find({ isEnabled: { $ne: false } }, { order: 1 }),
       models.WebsiteSettings.findOne(),
       models.Appearance.findOne(),
       models.SeoSettings.findOne()
@@ -77,18 +84,18 @@ const getPortfolioData = async (req, res) => {
     return res.json({
       success: true,
       data: {
-        profile: profile || {},
-        about: about || {},
-        skills: skills || [],
-        experiences: experiences || [],
-        projects: projects || [],
-        education: education || [],
-        certifications: certifications || [],
-        resources: resources || [],
-        socialLinks: socialLinks || [],
-        settings: settings || {},
-        appearance: appearance || {},
-        seoSettings: seoSettings || {}
+        profile: (profile && profile.fullName) ? profile : (fallbackData.profiles && fallbackData.profiles[0]) || {},
+        about: (about && about.headline) ? about : (fallbackData.about && fallbackData.about[0]) || {},
+        skills: (skills && skills.length > 0) ? skills : (fallbackData.skills || []),
+        experiences: (experiences && experiences.length > 0) ? experiences : (fallbackData.experiences || []),
+        projects: (projects && projects.length > 0) ? projects : (fallbackData.projects || []),
+        education: (education && education.length > 0) ? education : (fallbackData.education || []),
+        certifications: (certifications && certifications.length > 0) ? certifications : (fallbackData.certifications || []),
+        resources: (resources && resources.length > 0) ? resources : (fallbackData.resources || []),
+        socialLinks: (socialLinks && socialLinks.length > 0) ? socialLinks : (fallbackData.socialLinks || []),
+        settings: settings || (fallbackData.websiteSettings && fallbackData.websiteSettings[0]) || {},
+        appearance: appearance || (fallbackData.appearance && fallbackData.appearance[0]) || {},
+        seoSettings: seoSettings || (fallbackData.seoSettings && fallbackData.seoSettings[0]) || {}
       }
     });
   } catch (error) {

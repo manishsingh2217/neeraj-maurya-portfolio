@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
+import { defaultProjects } from '../data/defaultPortfolioData';
 import { ExternalLink, Github, ArrowUpRight, CheckCircle2, ChevronDown } from 'lucide-react';
 
 export const ProjectsSection = () => {
   const { projects } = usePortfolio();
+  const effectiveProjects = (projects && projects.length > 0) ? projects : defaultProjects;
   const [visibleCount, setVisibleCount] = useState(4);
 
   const defaultThumbnails = [
@@ -14,7 +16,7 @@ export const ProjectsSection = () => {
     'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80'
   ];
 
-  const publishedProjects = (projects || []).filter((p) => p.isPublished !== false);
+  const publishedProjects = effectiveProjects.filter((p) => p.isPublished !== false);
   const displayedProjects = publishedProjects.slice(0, visibleCount);
   const hasMore = publishedProjects.length > visibleCount;
 

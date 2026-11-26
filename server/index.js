@@ -59,6 +59,9 @@ app.use('/api/contact', contactLimiter);
 // Ensure database connection and seed in all environments (Node.js server & Vercel serverless)
 let dbInitPromise = null;
 app.use(async (req, res, next) => {
+  if (getStatus().isConnected || getStatus().useLocalStore) {
+    return next();
+  }
   if (!dbInitPromise) {
     dbInitPromise = (async () => {
       try {

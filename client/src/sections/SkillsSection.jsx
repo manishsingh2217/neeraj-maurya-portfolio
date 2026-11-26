@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
+import { defaultSkills } from '../data/defaultPortfolioData';
 import {
   Code,
   Terminal,
@@ -30,6 +31,7 @@ import {
 
 export const SkillsSection = () => {
   const { skills } = usePortfolio();
+  const effectiveSkills = (skills && skills.length > 0) ? skills : defaultSkills;
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = [
@@ -76,7 +78,7 @@ export const SkillsSection = () => {
     return <Code className="w-5 h-5" />;
   };
 
-  const filteredSkills = (skills || []).filter((s) => {
+  const filteredSkills = effectiveSkills.filter((s) => {
     if (activeCategory === 'All') return s.isEnabled !== false;
     return s.category === activeCategory && s.isEnabled !== false;
   });

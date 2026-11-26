@@ -1,9 +1,11 @@
 import React from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
+import { defaultExperiences } from '../data/defaultPortfolioData';
 import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 
 export const ExperienceSection = () => {
   const { experiences } = usePortfolio();
+  const effectiveExperiences = (experiences && experiences.length > 0) ? experiences : defaultExperiences;
 
   return (
     <section id="experience" className="py-8 sm:py-12">
@@ -21,7 +23,7 @@ export const ExperienceSection = () => {
 
       {/* Experience Cards */}
       <div className="space-y-4 sm:space-y-6">
-        {(experiences || []).map((exp, idx) => (
+        {effectiveExperiences.map((exp, idx) => (
           <div
             key={exp._id || exp.id || idx}
             className="bg-card rounded-2xl p-4 sm:p-6 sm:p-7 shadow-lg transition-all duration-300 relative group overflow-hidden"

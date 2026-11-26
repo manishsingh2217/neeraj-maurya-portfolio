@@ -1,10 +1,12 @@
 import React from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
+import { defaultCertifications } from '../data/defaultPortfolioData';
 import { Award, ExternalLink, CheckCircle } from 'lucide-react';
 
 export const CertificationsSection = () => {
   const { certifications } = usePortfolio();
-  const enabledCerts = (certifications || []).filter((c) => c.isEnabled !== false);
+  const effectiveCertifications = (certifications && certifications.length > 0) ? certifications : defaultCertifications;
+  const enabledCerts = effectiveCertifications.filter((c) => c.isEnabled !== false);
 
   return (
     <section id="certifications" className="py-8 sm:py-12">

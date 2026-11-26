@@ -1,9 +1,11 @@
 import React from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
+import { defaultEducation } from '../data/defaultPortfolioData';
 import { GraduationCap, Award, Calendar } from 'lucide-react';
 
 export const EducationSection = () => {
   const { education } = usePortfolio();
+  const effectiveEducation = (education && education.length > 0) ? education : defaultEducation;
 
   return (
     <section id="education" className="py-8 sm:py-12">
@@ -21,7 +23,7 @@ export const EducationSection = () => {
 
       {/* Timeline Layout */}
       <div className="relative border-l border-primary/20 ml-2 sm:ml-6 space-y-6 sm:space-y-8 pl-4 sm:pl-8">
-        {(education || []).map((edu, idx) => (
+        {effectiveEducation.map((edu, idx) => (
           <div key={edu._id || edu.id || idx} className="relative group">
             {/* Glowing Timeline Node */}
             <div className="absolute -left-[23px] sm:-left-[39px] top-2 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-primary ring-4 ring-primary/20 group-hover:scale-125 transition-transform duration-200" />
