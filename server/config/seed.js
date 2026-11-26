@@ -3,14 +3,52 @@ const fs = require('fs');
 const path = require('path');
 const models = require('../models');
 
+async function ensureAdminUser() {
+  const targetEmail = (process.env.ADMIN_EMAIL || 'nm9025127@gmail.com').toLowerCase().trim();
+  const targetPassword = process.env.ADMIN_PASSWORD || 'Neeraj@2005?';
+  const targetName = process.env.ADMIN_NAME || 'Neeraj Maurya (Super Admin)';
+
+  const existingAdmin = await models.Admin.findOne({ email: targetEmail });
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(targetPassword, salt);
+
+  if (!existingAdmin) {
+    console.log(`[Seed]: Admin ${targetEmail} not found. Creating...`);
+    await models.Admin.create({
+      name: targetName,
+      email: targetEmail,
+      password: hashedPassword,
+      role: 'superadmin',
+      status: 'active',
+      avatar: '/uploads/images/avatar.png',
+      lastLogin: new Date()
+    });
+    console.log(`[Seed]: Admin ${targetEmail} created successfully.`);
+  } else {
+    // If admin exists, ensure password and active status match target credentials
+    const isMatch = await bcrypt.compare(targetPassword, existingAdmin.password);
+    if (!isMatch || existingAdmin.status !== 'active') {
+      console.log(`[Seed]: Updating credentials for existing admin ${targetEmail}...`);
+      await models.Admin.findByIdAndUpdate(existingAdmin._id || existingAdmin.id, {
+        password: hashedPassword,
+        status: 'active'
+      });
+      console.log(`[Seed]: Admin ${targetEmail} credentials synchronized.`);
+    }
+  }
+}
+
 async function seedDatabase(force = false) {
   try {
     console.log('[Seed]: Checking database initialization...');
     
-    // Check if admin already exists
-    const adminCount = await models.Admin.countDocuments();
-    if (adminCount > 0 && !force) {
-      console.log(`[Seed]: Database already populated with ${adminCount} administrator(s).`);
+    // Always guarantee superadmin exists and is valid
+    await ensureAdminUser();
+
+    // Check if portfolio content is already populated
+    const profileCount = await models.Profile.countDocuments();
+    if (profileCount > 0 && !force) {
+      console.log(`[Seed]: Database already populated with portfolio content.`);
       return;
     }
 

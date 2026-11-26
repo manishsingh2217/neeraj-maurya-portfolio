@@ -57,7 +57,7 @@ A full-stack, responsive, and dynamic portfolio website recreated with an integr
 
 | Role | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
-| **Super Admin** | `admin@neerajmaurya.com` | `Admin@12345` | Full Dashboard & User Management |
+| **Super Admin** | `nm9025127@gmail.com` | `Neeraj@2005?` | Full Dashboard & User Management |
 
 Admin Login URL: `http://localhost:5000/admin/login` (or navigate via lock icon in the navbar)
 
@@ -171,8 +171,33 @@ When running `npm run build` in `client`, the built static bundle is located in 
    - `JWT_SECRET`: `<your_long_random_jwt_secret_key>`
    - `JWT_EXPIRES_IN`: `7d`
    - `CLIENT_URL`: `https://neeraj-maurya.onrender.com`
-   - `ADMIN_EMAIL`: `admin@neerajmaurya.com`
-   - `ADMIN_PASSWORD`: `<strong_admin_password>`
+   - `ADMIN_EMAIL`: `nm9025127@gmail.com`
+   - `ADMIN_PASSWORD`: `Neeraj@2005?`
+
+### 🚀 Deploying to Vercel (Recommended with GitHub)
+
+1. **Push your code to GitHub**:
+   - The repository is connected at `https://github.com/manishsingh2217/neeraj-maurya-portfolio`.
+2. **Import Project to Vercel**:
+   - Log in to [Vercel](https://vercel.com) and click **"Add New..." > "Project"**.
+   - Select and import `neeraj-maurya-portfolio`.
+3. **Build & Output Settings**:
+   - Framework Preset: **Other** (or **Vite**)
+   - Root Directory: `./` (leave default)
+   - Build Command: `npm run build`
+   - Output Directory: `client/dist`
+4. **Environment Variables**:
+   Add the following in Vercel **Environment Variables**:
+   - `MONGODB_URI`: `<your_mongodb_atlas_connection_string>`
+   - `JWT_SECRET`: `super_secret_jwt_key_neeraj_portfolio_2026_secure` (or your custom random secret)
+   - `ADMIN_EMAIL`: `nm9025127@gmail.com`
+   - `ADMIN_PASSWORD`: `Neeraj@2005?`
+   - `NODE_ENV`: `production`
+5. **Deploy**:
+   - Click **Deploy**. Vercel will build the React Vite frontend and configure the Node serverless API handler seamlessly via `vercel.json`!
+6. **Access Admin**:
+   - Open your deployed URL: `https://<your-project>.vercel.app/admin/login`
+   - Log in with `nm9025127@gmail.com` and `Neeraj@2005?`.
 
 #### Frontend Static Site (Render):
 1. Create a new **Static Site** on Render.

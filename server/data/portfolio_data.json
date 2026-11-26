@@ -8,9 +8,9 @@
       "role": "superadmin",
       "status": "active",
       "avatar": "/uploads/images/avatar.png",
-      "lastLogin": "2026-11-25T16:51:04.227Z",
+      "lastLogin": "2026-11-26T02:22:05.436Z",
       "createdAt": "2026-11-22T09:29:11.358Z",
-      "updatedAt": "2026-11-25T16:51:04.231Z"
+      "updatedAt": "2026-11-26T02:22:05.440Z"
     },
     {
       "_id": "admin-neeraj-maurya",
@@ -8160,6 +8160,45 @@
       "timestamp": "2026-11-25T16:51:04.237Z",
       "createdAt": "2026-11-25T16:51:04.260Z",
       "updatedAt": "2026-11-25T16:51:04.260Z"
+    },
+    {
+      "_id": "7788274c-1cab-4329-98ab-c8c7eca10f43",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T02:18:05.331Z",
+      "createdAt": "2026-11-26T02:18:05.346Z",
+      "updatedAt": "2026-11-26T02:18:05.346Z"
+    },
+    {
+      "_id": "d03d5dc0-5e8f-4b41-983e-4fa9bc0b9eca",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T02:21:52.205Z",
+      "createdAt": "2026-11-26T02:21:52.230Z",
+      "updatedAt": "2026-11-26T02:21:52.230Z"
+    },
+    {
+      "_id": "2177f351-a764-4aeb-b507-74f74334ad98",
+      "adminId": "3484c78c-73ed-480d-bde5-dca10ca53e83",
+      "adminEmail": "nm9025127@gmail.com",
+      "adminName": "Neeraj Maurya (Super Admin)",
+      "action": "LOGIN",
+      "module": "Auth",
+      "description": "Admin Neeraj Maurya (Super Admin) logged in successfully.",
+      "ipAddress": "::1",
+      "timestamp": "2026-11-26T02:22:05.446Z",
+      "createdAt": "2026-11-26T02:22:05.470Z",
+      "updatedAt": "2026-11-26T02:22:05.470Z"
     }
   ],
   "appearance": [

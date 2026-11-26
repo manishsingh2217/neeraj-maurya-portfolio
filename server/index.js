@@ -56,6 +56,23 @@ const contactLimiter = rateLimit({
 app.use('/api/auth/login', authLimiter);
 app.use('/api/contact', contactLimiter);
 
+// Ensure database connection and seed in all environments (Node.js server & Vercel serverless)
+let dbInitPromise = null;
+app.use(async (req, res, next) => {
+  if (!dbInitPromise) {
+    dbInitPromise = (async () => {
+      try {
+        await connectDB();
+        await seedDatabase(false);
+      } catch (err) {
+        console.error('[DB Init Error]:', err);
+      }
+    })();
+  }
+  await dbInitPromise;
+  next();
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   return res.json({
@@ -112,4 +129,8 @@ async function startServer() {
   }
 }
 
-startServer();
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = app;
